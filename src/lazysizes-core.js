@@ -289,7 +289,8 @@ function l(window, document) {
 		var regImg = /^img$/i;
 		var regIframe = /^iframe$/i;
 
-		var supportScroll = ('onscroll' in window) && !(/(gle|ing)bot/.test(navigator.userAgent));
+		var isLighthouse = /lighthouse/i.test(navigator.userAgent);
+		var supportScroll = (('onscroll' in window) && !(/(gle|ing|)bot/.test(navigator.userAgent))) || isLighthouse;
 
 		var shrinkExpand = 0;
 		var currentExpand = 0;
